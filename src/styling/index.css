@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+
+@media (max-width: 375px) {
+  div.fixed.bottom-20 {
+    width: 90%;
+    right: 5%;
+  }
+
+  h1.text-2xl {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 388px) and (max-width: 425px) {
+  div.fixed.bottom-20 {
+    width: 70%;
+    right: 5%;
+  }
+}
+@media (min-width: 426px) {
+  div.fixed.bottom-20 {
+    width: 50%;
+    right: 5%;
+  }
+}
+@media (min-width: 768px) {
+  div.fixed.bottom-20 {
+    width: 40%;
+    right: 5%;
+  }
+}
