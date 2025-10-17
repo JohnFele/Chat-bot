@@ -14,6 +14,7 @@ export default function ChatbotUI() {
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const BASE_URL = import.meta.env.VITE_ENV === 'development' ? 'http://localhost:3001' : import.meta.env.VITE_BASE_URL;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -44,7 +45,7 @@ export default function ChatbotUI() {
     setIsTyping(true);
 
     try {
-      const response = await fetch("http://localhost:3001/api/chat/message", {
+      const response = await fetch(`${BASE_URL}/api/chat/message`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
