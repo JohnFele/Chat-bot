@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -8,6 +7,7 @@ import {
   FaTimes,
   FaExclamationCircle
 } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 const Alert = ({ 
   message, 
@@ -140,6 +140,18 @@ const Alert = ({
       </motion.div>
     </AnimatePresence>
   );
+};
+
+Alert.propTypes = {
+  message: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  onClose: PropTypes.func,
+  actionText: PropTypes.string,
+  onAction: PropTypes.func,
+  position: PropTypes.string,
+  duration: PropTypes.number,
+  showClose: PropTypes.bool,
+  title: PropTypes.string,
 };
 
 export default Alert;
